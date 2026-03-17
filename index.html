@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ごはんタイム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>ごはんタイム</h1>
+      <p>おなかがすいたキャラに、ごはんをあげよう。</p>
+    </header>
 
+    <section class="main-card">
+      <div class="character-area">
+        <div class="character-name-row">
+          <span class="character-label">キャラ</span>
+          <select id="characterSelect" class="character-select" aria-label="キャラクター選択">
+            <option value="shiro">しろまる</option>
+          </select>
+        </div>
+
+        <div class="character-stage" id="characterStage">
+          <div class="character idle" id="character">
+            <div class="character-shadow"></div>
+
+            <div class="character-body">
+              <div class="ear left"></div>
+              <div class="ear right"></div>
+
+              <div class="face">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="mouth" id="mouth"></div>
+                <div class="cheek left"></div>
+                <div class="cheek right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="speech-bubble" id="speechBubble">
+          おなかすいた〜
+        </div>
+      </div>
+
+      <div class="control-area">
+        <section class="panel">
+          <div class="panel-title-row">
+            <h2>ステータス</h2>
+            <button id="saveButton" class="ghost-button" type="button">保存</button>
+          </div>
+
+          <div class="status-item">
+            <div class="status-label-row">
+              <span>満腹度</span>
+              <span id="fullnessText">40 / 100</span>
+            </div>
+            <div class="meter">
+              <div class="meter-fill fullness-fill" id="fullnessBar"></div>
+            </div>
+          </div>
+
+          <div class="status-item">
+            <div class="status-label-row">
+              <span>好感度</span>
+              <span id="affectionText">10 / 100</span>
+            </div>
+            <div class="meter">
+              <div class="meter-fill affection-fill" id="affectionBar"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>ごはんをあげる</h2>
+          <div class="food-grid" id="foodGrid"></div>
+        </section>
+
+        <section class="panel">
+          <h2>おせわ</h2>
+          <div class="action-buttons">
+            <button id="petButton" class="action-button" type="button">なでる</button>
+            <button id="resetButton" class="action-button reset" type="button">リセット</button>
+          </div>
+        </section>
+
+        <section class="panel mini-note">
+          <h2>メモ</h2>
+          <p>
+            状態はブラウザに保存されます。GitHub Pagesでもそのまま動きます。
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
