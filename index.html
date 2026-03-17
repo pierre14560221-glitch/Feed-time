@@ -1,38 +1,94 @@
 <!DOCTYPE html>
 <html lang="ja">
+<head>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="style.css" />
-<main class="app">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ごはんタイム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>ごはんタイム</h1>
+      <p>おなかがすいたキャラに、ごはんをあげよう。</p>
+    </header>
 
-  <header class="app-header">
-  <h1>Feed time</h1>
-</header>
-<section class="layout">
+    <section class="layout">
+      <section class="card character-card">
+        <div class="character-top">
+          <label class="select-wrap">
+            <span>キャラ</span>
+            <select id="characterSelect">
+              <option value="shiro">しろまる</option>
+            </select>
+          </label>
+        </div>
 
-  <section class="card character-card">
-    
-  <select id="characterSelect">
-  <option value="shiro">龍水</option>
-</select>
+        <div class="character-stage" id="characterStage">
+          <div class="character-image-wrap" id="characterWrap">
+            <img
+              id="characterImage"
+              class="character-image"
+              src="assets/characters/shiro/idle.png"
+              alt="キャラクター"
+            />
+          </div>
+        </div>
 
-<img
-  id="characterImage"
-  class="character-image"
-  src="assets/characters/ryusui/idle.png"
-  alt="キャラクター"
-/>
+        <div class="speech" id="speechBubble">おなかすいた〜</div>
+      </section>
 
-    <div class="speech" id="speechBubble">腹が減ったな</div>
+      <aside class="sidebar">
+        <section class="card">
+          <div class="panel-head">
+            <h2>ステータス</h2>
+            <button id="saveButton" class="small-button" type="button">保存</button>
+          </div>
 
-    <span id="fullnessText">40 / 100</span>
-<div id="fullnessBar" class="bar-fill fullness"></div>
+          <div class="status-block">
+            <div class="status-row">
+              <span>満腹度</span>
+              <span id="fullnessText">40 / 100</span>
+            </div>
+            <div class="bar">
+              <div id="fullnessBar" class="bar-fill fullness"></div>
+            </div>
+          </div>
 
-    <div class="food-list" id="foodGrid"></div>
-    
-    <button id="petButton" class="action-button" type="button">なでる</button>
-    <button id="resetButton" class="action-button reset" type="button">リセット</button>
-    
-    <script src="script.js"></script>
+          <div class="status-block">
+            <div class="status-row">
+              <span>好感度</span>
+              <span id="affectionText">10 / 100</span>
+            </div>
+            <div class="bar">
+              <div id="affectionBar" class="bar-fill affection"></div>
+            </div>
+          </div>
+        </section>
 
-    
+        <section class="card">
+          <h2>ごはんをあげる</h2>
+          <div class="food-list" id="foodGrid"></div>
+        </section>
+
+        <section class="card">
+          <h2>おせわ</h2>
+          <div class="actions">
+            <button id="petButton" class="action-button" type="button">なでる</button>
+            <button id="resetButton" class="action-button reset" type="button">リセット</button>
+          </div>
+        </section>
+
+        <section class="card note-card">
+          <h2>メモ</h2>
+          <p>
+            キャラ画像・食べ物画像は assets フォルダの中身を自分のイラストに差し替えるだけで使えます。
+          </p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
